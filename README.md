@@ -1,5 +1,15 @@
-# Predict_customer_churn
+# Predict Customer Churn
 
-This project is part of **Udacity Machine Learning DevOps Engineer** course.\
-This project takes a simple Jupiter Notebook implementation of a customer churn predidtion model, using simple linear regression.\
-The focus is however, on using clean code practices, including PEP8 standards, and refactoring code to make it production ready and ready to use in a pipeline.
+- Project **Predict Customer Churn** of ML DevOps Engineer Nanodegree Udacity
+
+## Project Description
+Your project description here.
+
+## Files and data description
+Overview of the files and data present in the root directory. 
+
+## Running Files
+How do you run your files? What should happen when you run your files?
+
+
+
