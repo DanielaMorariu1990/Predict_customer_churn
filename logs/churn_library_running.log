@@ -1,0 +1,9 @@
+ChurnLibraryClass - INFO - Directory ./images/eda already exists. Check completed, moving on...
+ChurnLibraryClass - INFO - If run_id is not defined. Default to previous model version.
+ChurnLibraryClass - INFO - Directory ./images/results already exists. Check completed, moving on...
+ChurnLibraryClass - INFO - Directory ./images/results already exists. Check completed, moving on...
+ChurnLibraryClass - INFO - SUCCESS: Calculating predicted values fro RF model.
+ChurnLibraryClass - INFO - SUCCESS: Calculating predicted values fro LR model.
+ChurnLibraryClass - INFO - SUCCESS: Predicted values already calculated.
+ChurnLibraryClass - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
+ChurnLibraryClass - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results
