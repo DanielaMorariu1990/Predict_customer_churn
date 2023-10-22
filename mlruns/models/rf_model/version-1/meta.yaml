@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1697975407508
+current_stage: None
+description: null
+last_updated_timestamp: 1697975407508
+name: rf_model
+run_id: 45cf5a916b804887a14c175721e556ec
+run_link: null
+source: file:///Users/danielamorariu/Documents/Udacity_MLOps_Engineer/Predict_customer_churn/mlruns/0/45cf5a916b804887a14c175721e556ec/artifacts/rf_model
+status: READY
+status_message: null
+user_id: null
+version: 1

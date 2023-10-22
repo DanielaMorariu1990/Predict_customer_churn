@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1697975411487
+current_stage: None
+description: null
+last_updated_timestamp: 1697975411487
+name: logistic_model
+run_id: 45cf5a916b804887a14c175721e556ec
+run_link: null
+source: file:///Users/danielamorariu/Documents/Udacity_MLOps_Engineer/Predict_customer_churn/mlruns/0/45cf5a916b804887a14c175721e556ec/artifacts/lr_model
+status: READY
+status_message: null
+user_id: null
+version: 1

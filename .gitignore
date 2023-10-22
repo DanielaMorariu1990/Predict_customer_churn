@@ -4,7 +4,7 @@ __pycache__/
 *$py.class
 settings.json
 *.vscode
-
+mlruns/0
 # C extensions
 *.so
 
