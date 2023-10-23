@@ -643,10 +643,10 @@ if __name__ == "__main__":
         include_heatmap=True,
     )
     churn_customers.perform_feature_engineering(response=keep_cols)
-    #     churn_customers.train_models(
-    #         param_grid=param_grid_input,
-    #         path_to_images="./images/results",
-    #     )
+    churn_customers.train_models(
+        param_grid=param_grid_input,
+        path_to_images="./images/results",
+    )
     churn_customers.feature_importance_plot(
         model_path="./rf_model", path_to_images="./images/results", model_version=3
     )

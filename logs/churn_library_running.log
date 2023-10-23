@@ -1,9 +1,28 @@
+ChurnLibraryClass - INFO - SUCCESS: Completed reading in data.
+ChurnLibraryClass - INFO - SUCEESS: Created one hot encoding for categorical variables.
 ChurnLibraryClass - INFO - Directory ./images/eda already exists. Check completed, moving on...
-ChurnLibraryClass - INFO - If run_id is not defined. Default to previous model version.
+ChurnLibraryClass - INFO - SUCCESS: Saved EDA plots to ./images/eda.
+ChurnLibraryClass - INFO - SUCEESS: Split data set in test and train data sets.
 ChurnLibraryClass - INFO - Directory ./images/results already exists. Check completed, moving on...
+ChurnLibraryClass - INFO - SUCCESS: Directory lr_model removed successfully. We need to delete local model directory for Mlflow process.
+ChurnLibraryClass - INFO - SUCCESS: Directory rf_model removed successfully. We need to delete local model directory for Mlflow process.
+ChurnLibraryClass - INFO - SUCCESS: Training completed...
+ChurnLibraryClass - INFO - SUCCESS: Competed calculations of predicted values for both test and train.
+ChurnLibraryClass - INFO - Test_Random_Forest results:
+ChurnLibraryClass - INFO - Test_Random_Forest precision results:0.9344262295081968 
+ChurnLibraryClass - INFO - Test_Random_Forest recall results:0.8044354838709677 
+ChurnLibraryClass - INFO - Test_Random_Forest f1 results:0.8645720476706392 
+ChurnLibraryClass - INFO - Train_Random_Forest results:
+ChurnLibraryClass - INFO - Train_Random_Forest precision results:1.0 
+ChurnLibraryClass - INFO - Train_Random_Forest recall results:1.0 
+ChurnLibraryClass - INFO - Train_Random_Forest f1 results:1.0 
+ChurnLibraryClass - INFO - SUCCESS: Saved ROC plot locally and as artifact to the run.
+ChurnLibraryClass - INFO - SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow.
 ChurnLibraryClass - INFO - Directory ./images/results already exists. Check completed, moving on...
-ChurnLibraryClass - INFO - SUCCESS: Calculating predicted values fro RF model.
-ChurnLibraryClass - INFO - SUCCESS: Calculating predicted values fro LR model.
+ChurnLibraryClass - INFO - SUCCESS: Loaded model.
+ChurnLibraryClass - INFO - SUCCESS: Saved feature importnace plot to image path.
+ChurnLibraryClass - INFO - SUCCESS: Logged feature importance plot as artifact to mlflow run.
+ChurnLibraryClass - INFO - Directory ./images/results already exists. Check completed, moving on...
 ChurnLibraryClass - INFO - SUCCESS: Predicted values already calculated.
 ChurnLibraryClass - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
 ChurnLibraryClass - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results

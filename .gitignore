@@ -4,8 +4,8 @@ __pycache__/
 *$py.class
 settings.json
 *.vscode
-mlruns/0/45cf5a916b804887a14c175721e556ec
-mlruns/0/faa24f82da6f403e85f858c5e106b129
+mlruns/0/
+
 # C extensions
 *.so
 
