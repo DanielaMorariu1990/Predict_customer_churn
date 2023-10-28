@@ -26,3 +26,47 @@ ChurnLibraryClass - INFO - Directory ./images/results already exists. Check comp
 ChurnLibraryClass - INFO - SUCCESS: Predicted values already calculated.
 ChurnLibraryClass - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
 ChurnLibraryClass - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results
+2023-10-28 13:39:40,570 - ChurnLibrary - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:39:41,147 - ChurnLibrary - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:39:41,147 - ChurnLibrary - INFO - Directory ./images/eda already exists. Check completed, moving on...
+2023-10-28 13:39:43,697 - ChurnLibrary - INFO - SUCCESS: Saved EDA plots to ./images/eda.
+2023-10-28 13:39:43,703 - ChurnLibrary - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:39:43,703 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-28 13:39:43,704 - ChurnLibrary - INFO - SUCCESS: Directory lr_model removed successfully. We need to delete local model directory for Mlflow process.
+2023-10-28 13:39:43,707 - ChurnLibrary - INFO - SUCCESS: Directory rf_model removed successfully. We need to delete local model directory for Mlflow process.
+2023-10-28 13:42:20,429 - ChurnLibrary - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:42:21,028 - ChurnLibrary - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:42:21,028 - ChurnLibrary - INFO - Directory ./images/eda already exists. Check completed, moving on...
+2023-10-28 13:42:23,578 - ChurnLibrary - INFO - SUCCESS: Saved EDA plots to ./images/eda.
+2023-10-28 13:42:23,583 - ChurnLibrary - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:42:23,583 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-28 13:42:23,583 - ChurnLibrary - INFO - SUCCESS: Directory lr_model dose not exist. No need to remove it.
+2023-10-28 13:42:23,584 - ChurnLibrary - INFO - SUCCESS: Directory rf_model dose not exist. No need to remove it.
+2023-10-28 13:57:19,614 - ChurnLibrary - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:57:20,229 - ChurnLibrary - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:57:20,229 - ChurnLibrary - INFO - Directory ./images/eda already exists. Check completed, moving on...
+2023-10-28 13:57:22,838 - ChurnLibrary - INFO - SUCCESS: Saved EDA plots to ./images/eda.
+2023-10-28 13:57:22,843 - ChurnLibrary - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:57:22,843 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-28 13:57:22,843 - ChurnLibrary - INFO - SUCCESS: Directory lr_model dose not exist. No need to remove it.
+2023-10-28 13:57:22,843 - ChurnLibrary - INFO - SUCCESS: Directory rf_model dose not exist. No need to remove it.
+2023-10-28 14:02:28,998 - ChurnLibrary - INFO - SUCCESS: Training completed...
+2023-10-28 14:02:29,280 - ChurnLibrary - INFO - SUCCESS: Competed calculations of predicted values for both test and train.
+2023-10-28 14:02:29,286 - ChurnLibrary - INFO - Test_Random_Forest results:
+2023-10-28 14:02:29,286 - ChurnLibrary - INFO - Test_Random_Forest precision results:0.9344262295081968 
+2023-10-28 14:02:29,286 - ChurnLibrary - INFO - Test_Random_Forest recall results:0.8044354838709677 
+2023-10-28 14:02:29,286 - ChurnLibrary - INFO - Test_Random_Forest f1 results:0.8645720476706392 
+2023-10-28 14:02:29,299 - ChurnLibrary - INFO - Train_Random_Forest results:
+2023-10-28 14:02:29,299 - ChurnLibrary - INFO - Train_Random_Forest precision results:1.0 
+2023-10-28 14:02:29,299 - ChurnLibrary - INFO - Train_Random_Forest recall results:1.0 
+2023-10-28 14:02:29,299 - ChurnLibrary - INFO - Train_Random_Forest f1 results:1.0 
+2023-10-28 14:02:29,576 - ChurnLibrary - INFO - SUCCESS: Saved ROC plot locally and as artifact to the run.
+2023-10-28 14:02:38,325 - ChurnLibrary - INFO - SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow.
+2023-10-28 14:02:38,330 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-28 14:02:38,362 - ChurnLibrary - INFO - SUCCESS: Loaded model.
+2023-10-28 14:02:38,718 - ChurnLibrary - INFO - SUCCESS: Saved feature importnace plot to image path.
+2023-10-28 14:02:38,719 - ChurnLibrary - INFO - SUCCESS: Logged feature importance plot as artifact to mlflow run.
+2023-10-28 14:02:38,721 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-28 14:02:38,721 - ChurnLibrary - INFO - SUCCESS: Predicted values already calculated.
+2023-10-28 14:02:38,984 - ChurnLibrary - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
+2023-10-28 14:02:39,139 - ChurnLibrary - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results

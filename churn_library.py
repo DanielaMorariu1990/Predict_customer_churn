@@ -36,13 +36,18 @@ sns.set()
 
 os.environ["QT_QPA_PLATFORM"] = "offscreen"
 
-logging.basicConfig(
-    filename="./logs/churn_library_running.log",
-    level=logging.INFO,
-    filemode="w",
-    format="%(name)s - %(levelname)s - %(message)s",
-)
-logger_cls = logging.getLogger("ChurnLibraryClass")
+log_file_path = "./logs/churn_library_running.log"
+os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
+
+# Create a file handler and set the formatter
+fileh = logging.FileHandler(log_file_path, "a")
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+fileh.setFormatter(formatter)
+
+# Create a logger for the churn_library_test.log file
+log = logging.getLogger("ChurnLibrary")
+log.setLevel(logging.INFO)
+log.addHandler(fileh)
 
 
 def check_if_directory_exits_and_create(pth, logger):
@@ -54,11 +59,16 @@ def check_if_directory_exits_and_create(pth, logger):
         None
 
     """
+
     if not os.path.exists(pth):
         os.makedirs(pth)
-        logger.info(f"Directory does not exist! Created directory: {pth}.")
+        if logger is not None:
+            logger.info(f"Directory does not exist! Created directory: {pth}.")
     else:
-        logger.info(f"Directory {pth} already exists. Check completed, moving on...")
+        if logger is not None:
+            logger.info(
+                f"Directory {pth} already exists. Check completed, moving on..."
+            )
         pass
 
 
@@ -74,16 +84,21 @@ def remove_local_model_directory(pth, logger):
         if os.path.exists(model_pth):
             try:
                 shutil.rmtree(model_pth)
-                logger.info(
-                    f"SUCCESS: Directory {model_pth} removed successfully. We need to delete local model directory for Mlflow process."
-                )
+                if logger is not None:
+                    logger.info(
+                        f"SUCCESS: Directory {model_pth} removed successfully. We need to delete local model directory for Mlflow process."
+                    )
 
             except OSError as o:
-                logger.exception(f"Error, {o.strerror}: {model_pth}")
+                if logger is not None:
+                    logger.exception(f"Error, {o.strerror}: {model_pth}")
+                else:
+                    raise o
         else:
-            logger.info(
-                f"SUCCESS: Directory {model_pth} dose not exist. No need to remove it."
-            )
+            if logger is not None:
+                logger.info(
+                    f"SUCCESS: Directory {model_pth} dose not exist. No need to remove it."
+                )
 
 
 def eval_metrics(actual, pred):
@@ -129,7 +144,8 @@ def save_roc_curve_results(model_arr, x_test, y_test, pth, logger):
         rfc_disp = plot_roc_curve(model_arr[0], x_test, y_test, ax=ax, alpha=0.8)
     else:
         msg = "Not implemented!!Currently only supporting array length 1 or 2."
-        logger.exception(msg)
+        if logger is not None:
+            logger.exception(msg)
         raise Exception(msg)
     plt.savefig(f"{pth}/roc_curve_result.png")
     plt.close()
@@ -216,6 +232,23 @@ class ChurnLibrary:
         self.y_test_preds_lr = None
         self.mlflow_run_id = None
 
+    def _is_logger_active_then_log(self, message, level: str = "info"):
+        """
+        Check if a logger object was passed. If yes, log the corresponding message with the corresponding level.
+        """
+
+        if self.logger:
+            if level == "info":
+                self.logger.info(str(message))
+            elif level == "debug":
+                self.logger.debug(str(message))
+            elif level == "exception":
+                self.logger.exception(str(message))
+            else:
+                self.logger.info(str(message))
+        else:
+            pass
+
     def import_data(self):
         """
         returns dataframe for the csv found at pth
@@ -226,7 +259,9 @@ class ChurnLibrary:
                 self.data_frame: pandas dataframe
         """
         self.data_frame = pd.read_csv(self.path)
-        self.logger.info("SUCCESS: Completed reading in data.")
+        self._is_logger_active_then_log(
+            message="SUCCESS: Completed reading in data.", level="info"
+        )
 
         return self.data_frame
 
@@ -280,7 +315,9 @@ class ChurnLibrary:
             fig.savefig(f"{path_to_storage}/heatmap.png")
             plt.close()
 
-        self.logger.info(f"SUCCESS: Saved EDA plots to {path_to_storage}.")
+        self._is_logger_active_then_log(
+            message=f"SUCCESS: Saved EDA plots to {path_to_storage}.", level="info"
+        )
 
     def encoder_helper(self, response):
         """
@@ -303,7 +340,7 @@ class ChurnLibrary:
         if len(self.category_list) != len(response):
             message = f"Length of names of the columns and columns to be computed dose not match:\
                 {len(response)} and {len(self.category_list)}"
-            self.logger.exception(message)
+            self._is_logger_active_then_log(message=message, level="exception")
             raise Exception(message)
         for col, name_col in zip(self.category_list, response):
             col_lst = []
@@ -313,7 +350,10 @@ class ChurnLibrary:
 
             self.data_frame[name_col] = col_lst
 
-        self.logger.info("SUCEESS: Created one hot encoding for categorical variables.")
+        self._is_logger_active_then_log(
+            message="SUCEESS: Created one hot encoding for categorical variables.",
+            level="info",
+        )
 
         return self.data_frame
 
@@ -335,7 +375,9 @@ class ChurnLibrary:
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
             X, y, test_size=0.3, random_state=42
         )
-        self.logger.info("SUCEESS: Split data set in test and train data sets.")
+        self._is_logger_active_then_log(
+            message="SUCEESS: Split data set in test and train data sets.", level="info"
+        )
 
         return self.X_train, self.X_test, self.y_train, self.y_test
 
@@ -371,7 +413,9 @@ class ChurnLibrary:
             mlflow.log_param(f"best_params_rf", cv_rfc.best_params_)
 
             lrc.fit(self.X_train, self.y_train)
-            self.logger.info("SUCCESS: Training completed...")
+            self._is_logger_active_then_log(
+                message="SUCCESS: Training completed...", level="info"
+            )
 
             self.y_train_preds_rf = cv_rfc.best_estimator_.predict(self.X_train)
             self.y_test_preds_rf = cv_rfc.best_estimator_.predict(self.X_test)
@@ -379,8 +423,9 @@ class ChurnLibrary:
             self.y_train_preds_lr = lrc.predict(self.X_train)
             self.y_test_preds_lr = lrc.predict(self.X_test)
 
-            self.logger.info(
-                "SUCCESS: Competed calculations of predicted values for both test and train."
+            self._is_logger_active_then_log(
+                message="SUCCESS: Competed calculations of predicted values for both test and train.",
+                level="info",
             )
 
             for actual, predicted, description in zip(
@@ -399,10 +444,16 @@ class ChurnLibrary:
                 ],
             ):
                 precision, recall, f1 = eval_metrics(actual, predicted)
-                self.logger.info(f"{description} results:")
-                self.logger.info(f"{description} precision results:{precision} ")
-                self.logger.info(f"{description} recall results:{recall} ")
-                self.logger.info(f"{description} f1 results:{f1} ")
+                self._is_logger_active_then_log(f"{description} results:", level="info")
+                self._is_logger_active_then_log(
+                    f"{description} precision results:{precision} ", level="info"
+                )
+                self._is_logger_active_then_log(
+                    f"{description} recall results:{recall} ", level="info"
+                )
+                self._is_logger_active_then_log(
+                    f"{description} f1 results:{f1} ", level="info"
+                )
                 mlflow.log_metric(f"{description}_precision_results", precision)
                 mlflow.log_metric(f"{description}_recall_results", recall)
                 mlflow.log_metric(f"{description}_f1_results", f1)
@@ -415,8 +466,9 @@ class ChurnLibrary:
                 logger=self.logger,
             )
             mlflow.log_artifact(f"{path_to_images}/roc_curve_result.png")
-            self.logger.info(
-                "SUCCESS: Saved ROC plot locally and as artifact to the run."
+            self._is_logger_active_then_log(
+                message="SUCCESS: Saved ROC plot locally and as artifact to the run.",
+                level="info",
             )
 
             # save best model
@@ -440,8 +492,9 @@ class ChurnLibrary:
                 artifact_path=path_to_lr_model,
                 registered_model_name="logistic_model",
             )
-            self.logger.info(
-                "SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow."
+            self._is_logger_active_then_log(
+                "SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow.",
+                level="info",
             )
 
     def classification_report_image(
@@ -468,8 +521,9 @@ class ChurnLibrary:
             self.mlflow_run_id = client.get_model_version(
                 "rf_model", model_version
             ).run_id
-            self.logger.info(
-                "Run_id is not defined. Default the run Id, to previous run_id (as indicated by last registered model version)."
+            self._is_logger_active_then_log(
+                "Run_id is not defined. Default the run Id, to previous run_id (as indicated by last registered model version).",
+                level="info",
             )
 
         check_if_directory_exits_and_create(pth=path_to_images, logger=self.logger)
@@ -478,15 +532,21 @@ class ChurnLibrary:
             model_rf = mlflow.sklearn.load_model(f"{model_path_rf}")
             self.y_test_preds_rf = model_rf.predict(self.X_test)
             self.y_train_preds_rf = model_rf.predict(self.X_train)
-            self.logger.info("SUCCESS: Calculating predicted values fro RF model.")
+            self._is_logger_active_then_log(
+                "SUCCESS: Calculating predicted values fro RF model.", level="info"
+            )
 
         if (self.y_test_preds_lr is None) or (self.y_train_preds_lr is None):
             model_lr = mlflow.sklearn.load_model(f"{model_path_lr}")
             self.y_test_preds_lr = model_lr.predict(self.X_test)
             self.y_train_preds_lr = model_lr.predict(self.X_train)
-            self.logger.info("SUCCESS: Calculating predicted values fro LR model.")
+            self._is_logger_active_then_log(
+                "SUCCESS: Calculating predicted values fro LR model.", level="info"
+            )
 
-        self.logger.info("SUCCESS: Predicted values already calculated.")
+        self._is_logger_active_then_log(
+            "SUCCESS: Predicted values already calculated.", level="info"
+        )
 
         save_classification_report(
             description="Random_Forest",
@@ -497,8 +557,9 @@ class ChurnLibrary:
             pth=path_to_images,
             figsize=(5, 5),
         )
-        self.logger.info(
-            f"SUCCESS: Saved Random Forest classification report image to specified folder:{path_to_images}"
+        self._is_logger_active_then_log(
+            f"SUCCESS: Saved Random Forest classification report image to specified folder:{path_to_images}",
+            level="info",
         )
         client.log_artifact(
             self.mlflow_run_id, f"{path_to_images}/Random_Forest_results.png"
@@ -515,8 +576,9 @@ class ChurnLibrary:
         client.log_artifact(
             self.mlflow_run_id, f"{path_to_images}/Logistic_Classification_results.png"
         )
-        self.logger.info(
-            f"SUCCESS: Saved Logistic Model classification report image to specified folder:{path_to_images}"
+        self._is_logger_active_then_log(
+            f"SUCCESS: Saved Logistic Model classification report image to specified folder:{path_to_images}",
+            level="info",
         )
 
     def feature_importance_plot(
@@ -539,13 +601,14 @@ class ChurnLibrary:
             self.mlflow_run_id = client.get_model_version(
                 "rf_model", model_version
             ).run_id
-            self.logger.info(
-                "Run_id is not defined. Default the run Id, to previous run_id (as indicated by last registered model version)."
+            self._is_logger_active_then_log(
+                "Run_id is not defined. Default the run Id, to previous run_id (as indicated by last registered model version).",
+                level="info",
             )
         check_if_directory_exits_and_create(pth=path_to_images, logger=self.logger)
 
         model_rf = mlflow.sklearn.load_model(f"{model_path}")
-        self.logger.info("SUCCESS: Loaded model.")
+        self._is_logger_active_then_log("SUCCESS: Loaded model.", level="info")
         # Calculate feature importances
         importances = model_rf.feature_importances_
         # Sort feature importances in descending order
@@ -564,19 +627,22 @@ class ChurnLibrary:
         plt.xticks(range(self.X_train.shape[1]), names, rotation=90)
         plt.savefig(f"{path_to_images}/feature_importance.png")
         plt.close()
-        self.logger.info("SUCCESS: Saved feature importnace plot to image path.")
+        self._is_logger_active_then_log(
+            "SUCCESS: Saved feature importnace plot to image path.", level="info"
+        )
 
         client.log_artifact(
             self.mlflow_run_id, f"{path_to_images}/feature_importance.png"
         )
-        self.logger.info(
-            "SUCCESS: Logged feature importance plot as artifact to mlflow run."
+        self._is_logger_active_then_log(
+            "SUCCESS: Logged feature importance plot as artifact to mlflow run.",
+            level="info",
         )
 
 
 if __name__ == "__main__":
     # Define parameters
-    cat_columns = cat_columns = [
+    cat_columns = [
         "Gender",
         "Education_Level",
         "Marital_Status",
@@ -629,7 +695,7 @@ if __name__ == "__main__":
     # Call Library functions
 
     churn_customers = ChurnLibrary(
-        pth=r"./data/bank_data.csv", category_lst=cat_columns, logger=logger_cls
+        pth=r"./data/bank_data.csv", category_lst=cat_columns, logger=log
     )
     input_data_frame = churn_customers.import_data()
     input_data_frame_preprocessed = churn_customers.encoder_helper(

@@ -1,0 +1,215 @@
+2023-10-28 11:29:48,926 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 11:29:48,962 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 11:29:48,963 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 11:47:23,124 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 11:47:23,236 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 11:47:23,237 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 11:47:57,298 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 11:47:57,349 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 11:47:57,350 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 11:47:57,352 - churn_library_test - INFO - Directory does not exist! Created directory: ./test_images/eda.
+2023-10-28 11:50:19,700 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 11:50:19,747 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 11:50:19,748 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 11:50:19,785 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 11:50:19,786 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:03:08,002 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:05:50,096 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:05:50,138 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:05:50,138 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:05:50,169 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:06:21,183 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:06:21,221 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:06:21,221 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:06:21,249 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:06:21,249 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:08:42,311 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:08:42,348 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:08:42,348 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:08:42,379 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:09:27,327 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:09:27,372 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:09:27,372 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:09:27,408 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:09:28,028 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:09:28,029 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:09:30,538 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:09:30,538 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:09:30,538 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:14:46,631 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:14:46,694 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:14:46,694 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:14:46,744 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:14:47,412 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:14:47,765 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:14:48,399 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:14:48,400 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:14:51,104 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:14:51,104 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:14:51,105 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:24:40,557 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:24:40,605 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:24:40,605 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:24:40,641 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:24:41,250 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:24:41,677 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:24:42,285 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:24:42,286 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:24:44,905 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:24:44,905 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:24:44,905 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:26:50,071 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:26:50,118 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:26:50,118 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:26:50,149 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:26:50,737 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:26:51,162 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:26:51,729 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:26:51,730 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:26:54,512 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:26:54,512 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:26:54,512 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:27:48,274 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:27:48,311 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:27:48,312 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:27:48,342 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:27:48,919 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:27:49,354 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:27:49,962 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:27:49,963 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:27:52,544 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:27:52,544 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:27:52,544 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:31:12,297 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:31:12,347 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:12,347 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:31:12,382 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:12,956 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:31:13,387 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:13,946 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:31:13,947 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:31:16,660 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:31:16,660 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:31:16,661 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:31:33,569 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:31:33,606 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:33,606 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:31:33,638 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:34,240 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:31:34,698 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:31:35,298 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:31:35,299 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:31:37,894 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:31:37,894 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:31:37,894 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:32:15,476 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:32:15,530 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:15,530 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:32:15,563 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:16,150 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:32:16,603 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:17,183 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:32:17,184 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:32:19,771 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:32:19,772 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:32:19,772 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:32:51,451 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:32:51,499 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:51,499 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:32:51,530 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:52,108 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:32:52,519 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:32:53,094 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:32:53,095 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:32:55,688 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:32:55,688 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:32:55,689 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:33:37,827 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:33:37,865 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:33:37,865 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:33:37,896 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:33:38,457 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:33:38,868 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:33:39,428 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:33:39,428 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:33:42,017 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:33:42,017 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:33:42,017 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 12:43:51,279 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 12:43:51,328 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:43:51,328 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 12:43:51,358 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:43:51,932 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:43:51,934 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-28 12:43:51,963 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 12:43:52,538 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 12:43:52,539 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 12:43:55,532 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 12:43:55,532 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 12:43:55,532 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 13:27:39,071 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 13:27:39,122 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:27:39,122 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 13:27:39,151 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:27:39,714 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:27:39,716 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-28 13:27:39,745 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:27:40,305 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:27:40,306 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 13:27:42,870 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 13:27:42,870 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 13:27:42,871 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 13:27:42,900 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:27:43,472 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:27:43,477 - churn_library_test - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:27:43,808 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:27:44,373 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:27:44,378 - churn_library_test - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:27:44,378 - churn_library_test - INFO - Directory does not exist! Created directory: ./test_images/results.
+2023-10-28 13:27:44,378 - churn_library_test - INFO - SUCCESS: Directory lr_model_test dose not exist. No need to remove it.
+2023-10-28 13:27:44,378 - churn_library_test - INFO - SUCCESS: Directory rf_model_test dose not exist. No need to remove it.
+2023-10-28 13:29:47,576 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 13:29:47,620 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:29:47,620 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 13:29:47,654 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:29:48,241 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:29:48,242 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-28 13:29:48,274 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:29:48,854 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:29:48,855 - churn_library_test - INFO - Directory ./test_images/eda already exists. Check completed, moving on...
+2023-10-28 13:29:51,392 - churn_library_test - INFO - SUCCESS: Saved EDA plots to ./test_images/eda.
+2023-10-28 13:29:51,393 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 13:29:51,393 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 13:29:51,421 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:29:52,009 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:29:52,014 - churn_library_test - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:29:52,016 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 3038.1 rows and 19 columns, instead it has 3039 rows and 19 columns.
+2023-10-28 13:29:52,018 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 7088.9 rows and 19 columns, instead it has 3039 rows and 19 columns.
+2023-10-28 13:29:52,047 - churn_library_test - INFO - SUCCESS: Completed reading in data.
+2023-10-28 13:29:52,627 - churn_library_test - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-28 13:29:52,632 - churn_library_test - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-28 13:29:52,632 - churn_library_test - INFO - Directory ./test_images/results already exists. Check completed, moving on...
+2023-10-28 13:29:52,633 - churn_library_test - INFO - SUCCESS: Directory lr_model_test dose not exist. No need to remove it.
+2023-10-28 13:29:52,633 - churn_library_test - INFO - SUCCESS: Directory rf_model_test dose not exist. No need to remove it.
+2023-10-28 13:35:05,140 - churn_library_test - INFO - SUCCESS: Training completed...
+2023-10-28 13:35:05,418 - churn_library_test - INFO - SUCCESS: Competed calculations of predicted values for both test and train.
+2023-10-28 13:35:05,424 - churn_library_test - INFO - Test_Random_Forest results:
+2023-10-28 13:35:05,425 - churn_library_test - INFO - Test_Random_Forest precision results:0.9344262295081968 
+2023-10-28 13:35:05,425 - churn_library_test - INFO - Test_Random_Forest recall results:0.8044354838709677 
+2023-10-28 13:35:05,425 - churn_library_test - INFO - Test_Random_Forest f1 results:0.8645720476706392 
+2023-10-28 13:35:05,439 - churn_library_test - INFO - Train_Random_Forest results:
+2023-10-28 13:35:05,439 - churn_library_test - INFO - Train_Random_Forest precision results:1.0 
+2023-10-28 13:35:05,439 - churn_library_test - INFO - Train_Random_Forest recall results:1.0 
+2023-10-28 13:35:05,439 - churn_library_test - INFO - Train_Random_Forest f1 results:1.0 
+2023-10-28 13:35:05,744 - churn_library_test - INFO - SUCCESS: Saved ROC plot locally and as artifact to the run.
+2023-10-28 13:35:15,878 - churn_library_test - INFO - SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow.
+2023-10-28 13:35:15,882 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
+2023-10-28 13:35:15,882 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
+2023-10-28 13:35:15,882 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
+2023-10-28 14:03:34,480 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 14:03:34,524 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 14:03:35,134 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-28 14:03:38,254 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 14:03:38,255 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 14:03:38,863 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 3038.1 rows and 19 columns, instead it has 3039 rows and 19 columns.
+2023-10-28 14:03:38,865 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 7088.9 rows and 19 columns, instead it has 3039 rows and 19 columns.
