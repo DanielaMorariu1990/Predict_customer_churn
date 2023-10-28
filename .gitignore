@@ -4,7 +4,11 @@ __pycache__/
 *$py.class
 settings.json
 *.vscode
-mlruns/0/
+mlruns/
+
+test_images/
+lr_model_test
+rf_model_test
 
 # C extensions
 *.so

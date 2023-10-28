@@ -213,3 +213,6 @@
 2023-10-28 14:03:38,255 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
 2023-10-28 14:03:38,863 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 3038.1 rows and 19 columns, instead it has 3039 rows and 19 columns.
 2023-10-28 14:03:38,865 - churn_library_test - ERROR - ERROR: X_train shape is wrong. It should have 7088.9 rows and 19 columns, instead it has 3039 rows and 19 columns.
+2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
+2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
+2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
