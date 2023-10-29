@@ -19,18 +19,25 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
-from sklearn.metrics import (
-    plot_roc_curve,
-    classification_report,
-    f1_score,
-    precision_score,
-    recall_score,
-)
-
 import mlflow
 import mlflow.sklearn
 from mlflow import MlflowClient
 
+from helper_functions import (
+    check_if_directory_exits_and_create,
+    remove_local_model_directory,
+    eval_metrics,
+    save_roc_curve_results,
+    save_classification_report,
+)
+
+from constants_pytest import (
+    categorical_variables,
+    response_names,
+    dict_columns_type_plots,
+    keep_cols,
+    param_grid_input,
+)
 
 sns.set()
 
@@ -48,165 +55,6 @@ fileh.setFormatter(formatter)
 log = logging.getLogger("ChurnLibrary")
 log.setLevel(logging.INFO)
 log.addHandler(fileh)
-
-
-def check_if_directory_exits_and_create(pth, logger):
-    """
-    Helper function to check if a directory exists and if not to create it.
-    input:
-        pth: directory path
-    output:
-        None
-
-    """
-
-    if not os.path.exists(pth):
-        os.makedirs(pth)
-        if logger is not None:
-            logger.info(f"Directory does not exist! Created directory: {pth}.")
-    else:
-        if logger is not None:
-            logger.info(
-                f"Directory {pth} already exists. Check completed, moving on..."
-            )
-        pass
-
-
-def remove_local_model_directory(pth, logger):
-    """
-    Helper function that removed model directories where we store mlflow model localy.
-    input:
-        pth: array of directories names
-    output:
-        None
-    """
-    for model_pth in pth:
-        if os.path.exists(model_pth):
-            try:
-                shutil.rmtree(model_pth)
-                if logger is not None:
-                    logger.info(
-                        f"SUCCESS: Directory {model_pth} removed successfully. We need to delete local model directory for Mlflow process."
-                    )
-
-            except OSError as o:
-                if logger is not None:
-                    logger.exception(f"Error, {o.strerror}: {model_pth}")
-                else:
-                    raise o
-        else:
-            if logger is not None:
-                logger.info(
-                    f"SUCCESS: Directory {model_pth} dose not exist. No need to remove it."
-                )
-
-
-def eval_metrics(actual, pred):
-    """
-    Helper function for calculating metrics for classification problems.
-
-    inputs:
-        actual: array, containing actual observations of response variable
-        pred: array, containg predicted values for response variable
-
-    output:
-        metrics: precision, recall, f1
-
-    """
-    precision = precision_score(actual, pred)
-    recall = recall_score(actual, pred)
-    f1 = f1_score(actual, pred)
-    return precision, recall, f1
-
-
-def save_roc_curve_results(model_arr, x_test, y_test, pth, logger):
-    """
-    Helper function to save the ROC curve for an input of model arrays. Currently implemented only for a model array of length max 2.
-
-    inputs:
-        model_arr: array, sklearn models
-        x_test: array, x-values for test data set
-        y_test: array, y-values for test data set
-        pth: path to storage
-        logger: logger object
-
-    output:
-        None
-
-    """
-    plt.figure(figsize=(15, 8))
-    if len(model_arr) == 2:
-        lrc_plot = plot_roc_curve(model_arr[0], x_test, y_test)
-        ax = plt.gca()
-        rfc_disp = plot_roc_curve(model_arr[1], x_test, y_test, ax=ax, alpha=0.8)
-        lrc_plot.plot(ax=ax, alpha=0.8)
-    elif len(model_arr) == 1:
-        rfc_disp = plot_roc_curve(model_arr[0], x_test, y_test, ax=ax, alpha=0.8)
-    else:
-        msg = "Not implemented!!Currently only supporting array length 1 or 2."
-        if logger is not None:
-            logger.exception(msg)
-        raise Exception(msg)
-    plt.savefig(f"{pth}/roc_curve_result.png")
-    plt.close()
-
-
-def save_classification_report(
-    description,
-    actual_test,
-    predicted_test,
-    actual_train,
-    predicted_train,
-    pth,
-    figsize=(5, 5),
-):
-    """
-    Helper function to save classification reports for diffrent models (test and train).
-    input:
-        description: str, model descriprion
-        actual_test: array, observed response variable test data set
-        predicted_test: array, predicted values on test data set
-        actual_train:  array, observed response variable train data set
-        predicted_train: array, predicted values on train data set
-        pth: path to storage
-        figsize: figure size for matplotlib plot
-
-    output:
-        None
-
-    """
-    plt.rc("figure", figsize=figsize)
-    plt.text(
-        0.01,
-        1.25,
-        str(f"{description} Test"),
-        {"fontsize": 10},
-        fontproperties="monospace",
-    )
-    plt.text(
-        0.01,
-        0.05,
-        str(classification_report(actual_test, predicted_test)),
-        {"fontsize": 10},
-        fontproperties="monospace",
-    )  # approach improved by OP -> monospace!
-    plt.text(
-        0.01,
-        0.6,
-        str(f"{description} Train"),
-        {"fontsize": 10},
-        fontproperties="monospace",
-    )
-    plt.text(
-        0.01,
-        0.7,
-        str(classification_report(actual_train, predicted_train)),
-        {"fontsize": 10},
-        fontproperties="monospace",
-    )
-    plt.axis("off")
-    plt.savefig(f"{pth}/{description}_results.png")
-    plt.close()
 
 
 class ChurnLibrary:
@@ -641,61 +489,10 @@ class ChurnLibrary:
 
 
 if __name__ == "__main__":
-    # Define parameters
-    cat_columns = [
-        "Gender",
-        "Education_Level",
-        "Marital_Status",
-        "Income_Category",
-        "Card_Category",
-    ]
-    response_names = [
-        "Gender_Churn",
-        "Education_Level_Churn",
-        "Marital_Status_Churn",
-        "Income_Category_Churn",
-        "Card_Category_Churn",
-    ]
-    # normalized_histogram, count_histogram, density_plot
-    dict_columns_type_plots = {
-        "Churn": ["count_histogram", "churn_distribution.png"],
-        "Customer_Age": ["count_histogram", "customer_age_distribution.png"],
-        "Marital_Status": ["normalized_histogram", "marital_status_distribution.png"],
-        "Total_Trans_Ct": ["density_plot", "total_transaction_distribution.png"],
-    }
-    keep_cols = [
-        "Customer_Age",
-        "Dependent_count",
-        "Months_on_book",
-        "Total_Relationship_Count",
-        "Months_Inactive_12_mon",
-        "Contacts_Count_12_mon",
-        "Credit_Limit",
-        "Total_Revolving_Bal",
-        "Avg_Open_To_Buy",
-        "Total_Amt_Chng_Q4_Q1",
-        "Total_Trans_Amt",
-        "Total_Trans_Ct",
-        "Total_Ct_Chng_Q4_Q1",
-        "Avg_Utilization_Ratio",
-        "Gender_Churn",
-        "Education_Level_Churn",
-        "Marital_Status_Churn",
-        "Income_Category_Churn",
-        "Card_Category_Churn",
-    ]
-
-    param_grid_input = {
-        "n_estimators": [200, 500],
-        "max_features": ["auto", "sqrt"],
-        "max_depth": [4, 5, 100],
-        "criterion": ["gini", "entropy"],
-    }
-
     # Call Library functions
 
     churn_customers = ChurnLibrary(
-        pth=r"./data/bank_data.csv", category_lst=cat_columns, logger=log
+        pth=r"./data/bank_data.csv", category_lst=categorical_variables, logger=log
     )
     input_data_frame = churn_customers.import_data()
     input_data_frame_preprocessed = churn_customers.encoder_helper(
