@@ -70,3 +70,31 @@ ChurnLibraryClass - INFO - SUCCESS: Saved Logistic Model classification report i
 2023-10-28 14:02:38,721 - ChurnLibrary - INFO - SUCCESS: Predicted values already calculated.
 2023-10-28 14:02:38,984 - ChurnLibrary - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
 2023-10-28 14:02:39,139 - ChurnLibrary - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results
+2023-10-29 11:16:15,442 - ChurnLibrary - INFO - SUCCESS: Completed reading in data.
+2023-10-29 11:16:16,033 - ChurnLibrary - INFO - SUCEESS: Created one hot encoding for categorical variables.
+2023-10-29 11:16:16,033 - ChurnLibrary - INFO - Directory ./images/eda already exists. Check completed, moving on...
+2023-10-29 11:16:18,685 - ChurnLibrary - INFO - SUCCESS: Saved EDA plots to ./images/eda.
+2023-10-29 11:16:18,690 - ChurnLibrary - INFO - SUCEESS: Split data set in test and train data sets.
+2023-10-29 11:16:18,690 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-29 11:16:18,692 - ChurnLibrary - INFO - SUCCESS: Directory lr_model removed successfully. We need to delete local model directory for Mlflow process.
+2023-10-29 11:16:18,693 - ChurnLibrary - INFO - SUCCESS: Directory rf_model removed successfully. We need to delete local model directory for Mlflow process.
+2023-10-29 11:21:36,386 - ChurnLibrary - INFO - SUCCESS: Training completed...
+2023-10-29 11:21:36,659 - ChurnLibrary - INFO - SUCCESS: Competed calculations of predicted values for both test and train.
+2023-10-29 11:21:36,666 - ChurnLibrary - INFO - Test_Random_Forest results:
+2023-10-29 11:21:36,666 - ChurnLibrary - INFO - Test_Random_Forest precision results:0.9344262295081968 
+2023-10-29 11:21:36,666 - ChurnLibrary - INFO - Test_Random_Forest recall results:0.8044354838709677 
+2023-10-29 11:21:36,666 - ChurnLibrary - INFO - Test_Random_Forest f1 results:0.8645720476706392 
+2023-10-29 11:21:36,681 - ChurnLibrary - INFO - Train_Random_Forest results:
+2023-10-29 11:21:36,681 - ChurnLibrary - INFO - Train_Random_Forest precision results:1.0 
+2023-10-29 11:21:36,681 - ChurnLibrary - INFO - Train_Random_Forest recall results:1.0 
+2023-10-29 11:21:36,681 - ChurnLibrary - INFO - Train_Random_Forest f1 results:1.0 
+2023-10-29 11:21:36,960 - ChurnLibrary - INFO - SUCCESS: Saved ROC plot locally and as artifact to the run.
+2023-10-29 11:21:46,750 - ChurnLibrary - INFO - SUCEESS: Trained LR and RF model saved locally to path ./model_lrc and ./model_rf and registerd through mlflow.
+2023-10-29 11:21:46,754 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-29 11:21:46,782 - ChurnLibrary - INFO - SUCCESS: Loaded model.
+2023-10-29 11:21:47,111 - ChurnLibrary - INFO - SUCCESS: Saved feature importnace plot to image path.
+2023-10-29 11:21:47,112 - ChurnLibrary - INFO - SUCCESS: Logged feature importance plot as artifact to mlflow run.
+2023-10-29 11:21:47,115 - ChurnLibrary - INFO - Directory ./images/results already exists. Check completed, moving on...
+2023-10-29 11:21:47,115 - ChurnLibrary - INFO - SUCCESS: Predicted values already calculated.
+2023-10-29 11:21:47,371 - ChurnLibrary - INFO - SUCCESS: Saved Random Forest classification report image to specified folder:./images/results
+2023-10-29 11:21:47,524 - ChurnLibrary - INFO - SUCCESS: Saved Logistic Model classification report image to specified folder:./images/results

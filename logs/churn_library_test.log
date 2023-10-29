@@ -236,3 +236,13 @@
 2023-10-29 11:04:12,669 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
 2023-10-29 11:04:12,670 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
 2023-10-29 11:04:12,670 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
+2023-10-29 11:26:07,796 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-29 11:26:07,842 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-29 11:26:08,448 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-29 11:26:11,608 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-29 11:26:11,608 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-29 11:26:12,216 - churn_library_test - INFO - SUCCESS: X_test shape is OK!
+2023-10-29 11:26:12,217 - churn_library_test - INFO - SUCCESS: X_train shape is OK!
+2023-10-29 11:31:38,538 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
+2023-10-29 11:31:38,539 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
+2023-10-29 11:31:38,539 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
