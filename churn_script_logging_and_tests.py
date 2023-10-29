@@ -1,7 +1,15 @@
+"""
+This module is used for testing the most important functions 
+of the ChurnLibabry class.
+I used pytest for this purpose.
+Author: Daniela Bielz
+Date: 29.10.2023
+"""
 import os
 import logging
+import math
 import pytest
-from churn_library import *
+from churn_library import ChurnLibrary
 from constants_pytest import (
     categorical_variables,
     response_names,
@@ -30,6 +38,7 @@ log.info("TESTING ChurnLibrary:")
 
 @pytest.fixture
 def my_churn_class():
+    """Set up ChurnLibrary to test import of data."""
     return ChurnLibrary(
         pth=r"./data/bank_data.csv", category_lst=categorical_variables, logger=None
     )
@@ -37,6 +46,7 @@ def my_churn_class():
 
 @pytest.fixture
 def set_up_churn_class(my_churn_class):
+    """Complete Set up ChurnLibrary to test import of data."""
     my_churn_class.import_data()
     my_churn_class.encoder_helper(response=response_names)
     return my_churn_class
@@ -98,6 +108,7 @@ def test_perform_eda(set_up_churn_class):
 
     except AssertionError as err:
         log.error("ERROR: The test_impages/eda path was not created!")
+        raise err
 
     try:
         files = os.listdir(path)
@@ -107,6 +118,7 @@ def test_perform_eda(set_up_churn_class):
         log.error(
             f"ERROR: Number of files created :{len(files)} vs number of files that was requested: {len(dict_columns_type_plots.keys()) +1} dose NOT match. Test Failed!"
         )
+        raise err
 
 
 def test_perform_feature_engineering(set_up_churn_class):
@@ -117,7 +129,7 @@ def test_perform_feature_engineering(set_up_churn_class):
     try:
         assert (
             set_up_churn_class.X_test.shape[0]
-            == set_up_churn_class.data_frame.shape[0] * 0.3
+            == math.ceil(set_up_churn_class.data_frame.shape[0] * 0.3)
         ) & (
             set_up_churn_class.X_test.shape[1]
             == set_up_churn_class.data_frame[keep_cols].shape[1]
@@ -125,12 +137,13 @@ def test_perform_feature_engineering(set_up_churn_class):
         log.info("SUCCESS: X_test shape is OK!")
     except AssertionError as err:
         log.error(
-            f"ERROR: X_train shape is wrong. It should have {set_up_churn_class.data_frame.shape[0]*0.3} rows and {set_up_churn_class.data_frame[keep_cols].shape[1]} columns, instead it has {set_up_churn_class.X_test.shape[0]} rows and {set_up_churn_class.X_test.shape[1]} columns."
+            f"ERROR: X_test shape is wrong. It should have {set_up_churn_class.data_frame.shape[0]*0.3} rows and {set_up_churn_class.data_frame[keep_cols].shape[1]} columns, instead it has {set_up_churn_class.X_test.shape[0]} rows and {set_up_churn_class.X_test.shape[1]} columns."
         )
+        raise err
     try:
         assert (
             set_up_churn_class.X_train.shape[0]
-            == set_up_churn_class.data_frame.shape[0] * 0.7
+            == math.floor(set_up_churn_class.data_frame.shape[0] * 0.7)
         ) & (
             set_up_churn_class.X_train.shape[1]
             == set_up_churn_class.data_frame[keep_cols].shape[1]
@@ -138,8 +151,9 @@ def test_perform_feature_engineering(set_up_churn_class):
         log.info("SUCCESS: X_train shape is OK!")
     except AssertionError as err:
         log.error(
-            f"ERROR: X_train shape is wrong. It should have {set_up_churn_class.data_frame.shape[0]*0.7} rows and {set_up_churn_class.data_frame[keep_cols].shape[1]} columns, instead it has {set_up_churn_class.X_test.shape[0]} rows and {set_up_churn_class.X_test.shape[1]} columns."
+            f"ERROR: X_train shape is wrong. It should have {set_up_churn_class.data_frame.shape[0]*0.7} rows and {set_up_churn_class.data_frame[keep_cols].shape[1]} columns, instead it has {set_up_churn_class.X_train.shape[0]} rows and {set_up_churn_class.X_train.shape[1]} columns."
         )
+        raise err
 
 
 def test_train_models(set_up_churn_class):
@@ -159,13 +173,16 @@ def test_train_models(set_up_churn_class):
         log.info("SUCCESS: Saved one results file to desired path.")
     except AssertionError as err:
         log.error("ERROR: No results file was saved! ")
+        raise err
     try:
         assert os.path.exists("./lr_model_test/model.pkl")
         log.info("SUCCESS: LR model pickle file exists.")
     except AssertionError as err:
         log.error("ERROR: No LR model file created!")
+        raise err
     try:
         assert os.path.exists("./rf_model_test/model.pkl")
         log.info("SUCCESS: RF model pickle file exists.")
     except AssertionError as err:
         log.error("ERROR: No RF model file created!")
+        raise err
