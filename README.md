@@ -12,10 +12,10 @@ Inside the project I have experimented with the libary MlFlow (which I found qui
 
 **data** folder contains the churn customer data in a csv file. This data is used for training.
 
-**images** folder contains two subfolders:\
+**images** folder contains two subfolders:
 
-- eda: Contains plots from the EDA, created by the method ChurnLibrary.perform_eda\
-- results: Contains plots summarizing results, after training the 2 models (lr and rf). These plots are created by multiple class methods: ChurnLibrary.train_model (creates roc curve plot), ChurnLibrary.classification_report_image (creates the two classification reports) and ChurnLibrary.classification_report_image.feature_importance_plot (creates the feature importance plot for rf).\
+- eda: Contains plots from the EDA, created by the method ChurnLibrary.perform_eda
+- results: Contains plots summarizing results, after training the 2 models (lr and rf). These plots are created by multiple class methods: ChurnLibrary.train_model (creates roc curve plot), ChurnLibrary.classification_report_image (creates the two classification reports) and ChurnLibrary.classification_report_image.feature_importance_plot (creates the feature importance plot for rf).
 
 **logs** folder contains two log files: one from running the actual library (training the models) and one contains the results of the testing framework.
 
