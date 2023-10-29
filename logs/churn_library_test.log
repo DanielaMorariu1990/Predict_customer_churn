@@ -216,3 +216,23 @@
 2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
 2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
 2023-10-28 14:08:54,659 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
+2023-10-28 14:14:57,609 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-28 14:14:57,656 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-28 14:14:58,324 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-28 14:15:01,566 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-28 14:15:01,567 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-28 14:15:02,200 - churn_library_test - INFO - SUCCESS: X_test shape is OK!
+2023-10-28 14:15:02,201 - churn_library_test - INFO - SUCCESS: X_train shape is OK!
+2023-10-28 23:28:08,476 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
+2023-10-28 23:28:08,480 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
+2023-10-28 23:28:08,480 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
+2023-10-29 10:58:40,572 - churn_library_test - INFO - TESTING ChurnLibrary:
+2023-10-29 10:58:40,623 - churn_library_test - INFO - Testing import_data: SUCCESS
+2023-10-29 10:58:41,283 - churn_library_test - INFO - Response names are in resulting data frame!
+2023-10-29 10:58:44,567 - churn_library_test - INFO - SUCCESS: The test_impages/eda path was created!
+2023-10-29 10:58:44,567 - churn_library_test - INFO - SUCCESS: All 5 plots have been created!
+2023-10-29 10:58:45,202 - churn_library_test - INFO - SUCCESS: X_test shape is OK!
+2023-10-29 10:58:45,204 - churn_library_test - INFO - SUCCESS: X_train shape is OK!
+2023-10-29 11:04:12,669 - churn_library_test - INFO - SUCCESS: Saved one results file to desired path.
+2023-10-29 11:04:12,670 - churn_library_test - INFO - SUCCESS: LR model pickle file exists.
+2023-10-29 11:04:12,670 - churn_library_test - INFO - SUCCESS: RF model pickle file exists.
